@@ -1,6 +1,6 @@
 import Service.ServiceWhore;
 import enity.Whore;
-import org.junit.Before;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -8,19 +8,11 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class ServiceWhoreTest {
 
-    private ServiceWhore serviceWhore;
-    private Whore whore;
-     @Before
-    public void init(){
-         serviceWhore = new ServiceWhore();
-     }
-
+    private static ServiceWhore serviceWhore = new ServiceWhore();
+    private static Whore whore = new Whore("Alla", 10.4);
 
      @Test
-    public void checkingAdding(){
-        whore = new Whore();
-        whore.setPrice(10.4);
-        whore.setName("Alla");
+    void checkingAdding(){
         assertNotNull(whore);
     }
 }
